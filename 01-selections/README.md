@@ -13,7 +13,9 @@
       the `result[0][0].length` returns the # of 'h2' elements found
   
   To get a selection with multiple groups,  use `selectAll`
-    ![alt text](image.png)
+
+    ![D3.selectAll()](image.png)
+
 For all intents and purposes you can ignore this; D3 handles the group feature a call to define `selection.attr` or `selections.style` will automatically go through each element the selection returns.
 
 `select` preserves the existing grouping and propogates data from parent to child
@@ -23,6 +25,7 @@ For all intents and purposes you can ignore this; D3 handles the group feature a
 `selectAll` does not, so a `.join` is needed to propogate data from parent to child
 
 `#null` elements are returned (in the order they encountered) when elements are found that do not match the subsquent selection material; for example, in the following 4 sections are returned but only two have `aside` elements
+
   ![alt text](image-1.png)
 
 ## Data Binding
