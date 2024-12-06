@@ -26,6 +26,7 @@ For all intents and purposes you can ignore this; D3 handles the group feature a
   ![alt text](image-1.png)
 
 ## Data Binding
+
 Data is bound to elements, not selections. Changes get stored in the DOM.
 The data stored in an element can be seen in `0.__data__`
 Data can be passed as a constant value or a function.
