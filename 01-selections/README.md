@@ -60,4 +60,4 @@ Handy if you only want the immediate descendents of a specific elements (??)
 ## Resources
 
 [Using D3.js](https://using-d3js.com/index.html) Selections
-[How Selctions Work](https://bost.ocks.org/mike/selection/)
+[How Selections Work](https://bost.ocks.org/mike/selection/)
