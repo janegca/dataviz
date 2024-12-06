@@ -14,7 +14,7 @@
   
   To get a selection with multiple groups,  use `selectAll`
 
-    ![D3.selectAll()](image.png)
+  ![example select](image.png)
 
 For all intents and purposes you can ignore this; D3 handles the group feature a call to define `selection.attr` or `selections.style` will automatically go through each element the selection returns.
 
