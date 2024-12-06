@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+	<title>SVG Shapes Gallery | D3.js in Action</title>
+  <script src="../d3.v7.js"></script>
+  <script>
+    function addStroke() {
+      d3.select("g")
+        .selectAll("circle")
+        .attr("stroke", "gray")
+        .attr("stroke-width", "3");
+    }
+    function removeStroke(){
+      d3.select("g")
+        .selectAll('circle')
+        .attr("stroke-width","0")
+    }
+    function colorThemBlue(){
+      d3.select("#groupSVG")
+        .selectAll("circle")
+          .attr('fill', 'lightBlue');
+    }
+    function colorThemPink(){
+      d3.select("#groupSVG")
+        .selectAll("circle")
+          .attr('fill', 'pink');
+    }
+    function filterOnRadius() {
+      d3.selectAll("#filterOnRadius circle")
+          .filter((d,i,nodes) => nodes[i].getAttribute("r") >= 20)
+          .attr('fill', 'lightBlue');
+    }
+
+  </script>
+</head>
+<body>
+  <div style="width:50%; max-width:1200px; margin:0 auto;">
+    <h1>D3 Selections</h1>
+    <svg viewbox="0 0 400 100" style="border:1px solid black">
+      <circle class="lightblue" cx="50" cy="50" r="25" fill="lightblue" />
+      <circle class="lightblue" cx="125" cy="50" r="25" fill="lightblue" />
+      <circle class="pink" cx="200" cy="50" r="25" fill="pink" />
+      <circle id="secondPink" class="pink" 
+        cx="275" cy="50" r="25" fill="pink" />
+      <circle cx="350" cy="50" r="25" fill="aquamarine" />
+    </svg>
+
+    <h2>Grouped Selections</h2>
+    <svg 
+      viewbox="0 0 400 150" style="border:1px solid black"
+          id="groupSVG" >
+      <g>
+        <circle r="25" cx="50" cy="45" fill="pink" />
+        <circle r="25" cx="200" cy="45" fill="pink" />
+        <circle r="25" cx="350" cy="45" fill="pink" />
+      </g>
+      <g>
+        <circle r="25" cx="50" cy="105" fill="pink" />
+        <circle r="25" cx="200" cy="105" fill="pink" />
+        <circle r="25" cx="350" cy="105" fill="pink" />
+      </g>
+    </svg>
+    <button id="addStrokeButton" onclick="addStroke()">
+      Add Stroke</button>
+    <button id="removeStrokeButton" onclick="removeStroke()">
+      Remove Stroke</button>
+    <button id="colorBlueButton" onclick="colorThemBlue()">
+      Color Them Blue</button>
+      <button id="colorPinkButton" onclick="colorThemPink()">
+        Color Them Pink</button>
+
+    <h2>Filtered Selections</h2>
+    <svg
+      viewbox="0 0 400 150" style="border:1px solid black"
+      id="filterOnRadius">
+      <circle cx="50" cy="50" r="5" fill="pink" />
+      <circle cx="125" cy="50" r="10" fill="pink" />
+      <circle cx="200" cy="50" r="15" fill="pink" />
+      <circle cx="275" cy="50" r="20" fill="pink" />
+      <circle cx="350" cy="50" r="25" fill="pink" />
+    </svg>
+    <button onclick="filterOnRadius()">Filter on Radius</button>
+  </div>
+</body>
+</html>
