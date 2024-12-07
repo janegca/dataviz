@@ -4,8 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
-	<title>SVG Shapes Gallery | D3.js in Action</title>
-  <script src="../d3.v7.js"></script>
+	<title>Making Selections with D3</title>
   <script>
     function addStroke() {
       d3.select("g")
@@ -33,7 +32,6 @@
           .filter((d,i,nodes) => nodes[i].getAttribute("r") >= 20)
           .attr('fill', 'lightBlue');
     }
-
   </script>
 </head>
 <body>
@@ -83,6 +81,34 @@
       <circle cx="350" cy="50" r="25" fill="pink" />
     </svg>
     <button onclick="filterOnRadius()">Filter on Radius</button>
+
+    Check the JS Console to view other selection functions.
+
   </div>
+  <script src="../d3.v7.js"></script>
+  <script>
+    // Other selection functions available
+    console.log( "root: ", d3.selection()); // document root
+    console.log( "empty(): ", d3.selectAll("div").empty());    // false
+    console.log( "size(): ", d3.selectAll("svg").size());     // 3
+    console.log( "node(): ", d3.select("svg").node());        // first node
+    console.log( "nodes(): ", d3.selectAll("svg").nodes());   // array of nodes
+
+    // Find the window associated with an element
+    const aDiv = d3.select("div").node();
+    console.log("aDiv: ", aDiv);
+    console.log("window: ", d3.window(aDiv));
+    console.log("owner Doc: ", d3.window(aDiv.ownerDocument));
+    console.log("default view: ", d3.window(aDiv.ownerDocument.defaultView));
+
+    console.log( d3.window(aDiv) === d3.window(aDiv.ownerDocument));  // true
+    console.log( d3.window(aDiv.ownerDocument) ===
+        d3.window(aDiv.ownerDocument.defaultView));   // true
+
+    // find the value of an attribute for the selected node
+    const aNode = d3.select('circle').node();
+    console.log( "node fill: ", d3.style( aNode, 'fill'));
+
+  </script>
 </body>
 </html>
