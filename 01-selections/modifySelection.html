@@ -4,26 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="selections.css">
 	<title>Modifying Selections with D3</title>
-  <style>
-    .blue-box{
-      margin: 0 auto;
-      background-color: lightblue;
-      width: 50px;
-      height: 50px;
-    }
-
-    .pink-box{
-      margin: 0 auto;
-      background-color: pink;
-      width: 50px;
-      height: 50px;
-    }
-  </style>
+  <script src="../d3.v7.js"></script>
+  <script src="modifySelections.js"></script>
+  
 </head>
-<body>
-  <div style="width:50%; max-width:1200px; margin:0 auto;">
-    <svg viewbox="0 0 250 60" style="border:1px solid black" 
+  <h1 class="container">Modifying Selections</h1>
+  <div class="container">
+    <svg viewbox="0 0 250 60" class="border" 
         id="eachSVG">
       <circle r="20" cx="50" cy="30" fill="lightblue" />
       <circle r="20" cx="100" cy="30" fill="lightblue" />
@@ -32,44 +21,57 @@
     </svg>
   <p style="margin-bottom: 1cm; margin-top: -5px">
   <button id="eachButton" onclick="applyEach()">Apply Each</button>
-  <button id="resetButton" onclick="resetEach()">Reset Each</button>
+  <button id="resetFillButton" onclick="resetFill()">Reset Each</button>
   <button id="removeFillButton" onclick="removeFill()">Remove Fill</button>
   </p>
   </div>
 
-  <div style="width:50%; max-width:1200px; margin:0 auto; 
-              border: 1px solid black; display: inline-flex"
-        id="styleExampleSVG">
-    <div class="box blue-box" style="margin-top: 15px"></div>
-    <div class="box pink-box"></div>
-    <div class="box pink-box"></div>
-  
-  <p style="margin: 0 auto">
-    <button id="styleExampleButton" onclick="addStyle()">Add Style</button>
+  <div class="container">
+    <div class="border" style="display: inline-flex"
+          id="styleExample">
+      <div class="box blue-box"></div>
+      <div class="box pink-box"></div>
+      <div class="box pink-box"></div>
+    </div>
+    <p style="margin-bottom: 1cm; margin-top: 2px">
+      <button id="styleExampleButton" onclick="addStyle()">Add Style</button>
+    </p>
+  </div>
+
+  <div class="container">
+    <svg viewbox="0 0 250 60" class="border"
+        id="setterExampleSVG">
+      <circle cx="50" cy="30" r="20" fill="lightblue" />
+      <circle cx="125" cy="30" r="20" fill="lightblue" />
+      <circle cx="200" cy="30" r="20" fill="lightblue" />
+    </svg>
+  <p style="margin-bottom: 1cm; margin-top: -5px">
+    <button id="setterExampleButton" onclick="setRadii()">Set Radii</button>
   </p>
   </div>
-  <script src="../d3.v7.js"></script>
-  <script>
-    function applyEach(){
-        d3.selectAll("#eachSVG circle").each((d,i,nodes) => {
-            if (i % 2 == 0) {
-                nodes[i].setAttribute("fill", "pink");
-            };
-    })};
 
-    function resetEach(){
-      d3.selectAll("#eachSVG circle")
-        .attr('fill', 'lightBlue');
-    };
+  <div class="container">
+    <svg viewbox="0 0 250 60" class="border"
+        id="classedExampleSVG">
+      <circle id="blue" cx="50" cy="30" r="20" fill="lightblue" />
+      <circle cx="125" cy="30" r="20" fill="pink" />
+      <circle cx="200" cy="30" r="20" fill="pink" />
+    </svg>
+    <p style="margin-bottom: 1cm; margin-top: -5px">
+      <button id="classedExampleButton" 
+        onclick="classedExampleButtonHandler()">Add Class</button>
+    </p>
+  </div>
 
-    function removeFill(){
-      d3.selectAll("#eachSVG circle").attr('fill', null);
-    }
-    
-    function addStyle() {
-      d3.selectAll("#styleExampleSVG .box")
-        .style("border-radius", "10px");
-    };
-</script>
+  <div class="container">
+    <div class="border" style="display: inline-flex">
+      <div id="textContainer">
+        <div class="textBox box blue-box">BOX</div>
+      </div>
+    </div>
+    <p style="margin-bottom: 1cm; margin-top: 2px">
+      <button id="changeTextButton" onclick="reverseText()">Reverse Text</button>
+    </p>
+  </div>
 </body>
 </html>
