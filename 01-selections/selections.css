@@ -14,7 +14,7 @@
   height: 50px;
 }
 
-.textBox{
+.text-box{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,10 +22,12 @@
 
 .blue-box{
   background-color: lightblue;
- 
 }
 .pink-box{
   background-color: pink;
+}
+.aqua-box{
+  background-color: aquamarine;
 }
 
 .lightblue{

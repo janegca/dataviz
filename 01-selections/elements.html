@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adding, Deleting, Moving Elements</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="selections.css">
+  <script src="../d3.v7.js" defer></script>
+  <script src="elements.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Creating Elements</h1>
+    <svg id="appendElement" class="border" viewbox="0 0 600 100">
+      <circle r="25" cx="50" cy="50" fill="pink" />
+      <circle r="25" cx="125" cy="50" fill="pink" />
+      <circle r="25" cx="200" cy="50" fill="pink" />
+    </svg>
+    <button onclick="appendElement()">Append Circle</button>
+    <br><br>
+
+    <svg id="appendWithFunction" class="border" viewbox="0 0 600 100">
+      <circle r="25" cx="50" cy="50" fill="lightblue" />
+      <circle r="25" cx="125" cy="50" fill="lightblue" />
+      <circle r="25" cx="200" cy="50" fill="lightblue" />
+    </svg>
+    <button onclick="appendWithFunction()">Append using a Function</button>
+  </div>
+  
+  <div class="container">
+    <h2>Moving Elements</h2>
+    <button onclick="rotate()">Rotate</button>
+    <div class="border" style="display: inline-flex"
+          id="moveContainer">
+      <div class="box blue-box text-box"><b>1</b></div>
+      <div class="box pink-box text-box"><b>2</b></div>
+      <div class="box pink-box text-box"><b>3</b></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Inserting Elements</h2>
+    <p>
+      <button onclick="insertBox()">Insert in Front</button>
+    </p>
+    <div class="border" style="display: inline-flex"
+          id="insertBox">
+      <div class="box pink-box"></div>
+      <div class="box pink-box"></div>
+      <div class="box pink-box"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <p>
+      <button onclick="insertBox2()">Insert as Children</button>
+    </p>
+    <div class="border" style="display: inline-flex"
+          id="insertBox2">
+      <div class="box blue-box"></div>
+      <div class="box blue-box"></div>
+      <div class="box blue-box"></div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <h2>Cloning Elements</h2>
+    <p>
+      <button onclick="cloneBoxes()">Clone Boxes</button>
+    </p>
+    <div class="border" style="display: inline-flex"
+          id="cloneBoxes">
+      <div class="box pink-box"></div>
+      <div class="box pink-box"></div>
+      <div class="box pink-box"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Removing Elements</h2>
+    <p>
+      <button onclick="removeBoxes()">Remove Pink Boxes</button>
+    </p>
+    <div class="border" style="display: inline-flex"
+          id="removeBoxes">
+      <div class="box pink-box"></div>
+      <div class="box aqua-box"></div>
+      <div class="box pink-box"></div>
+      <div class="box aqua-box"></div>
+      <div class="box pink-box"></div>
+      <div class="box aqua-box"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Raising Elements</h2> (Re-inserts each selected element, in order, as the last child of its parent)
+    <p>
+      <button onclick="raise()">Raise Element</button>
+    </p>
+    <svg id="raiseSVG" class="border" viewbox="0 0 300 60">
+      <circle r="20" cx="30" cy="30" fill="lightblue" />
+      <circle id="pink" r="20" cx="90" cy="30" fill="pink" />
+      <circle id="violet" r="20" cx="150" cy="30" fill="violet" />
+      <circle r="20" cx="210" cy="30" fill="lightblue" />
+    </svg>
+  </div>
+
+  <div class="container">
+    <h2>Lowering Elements</h2>(Re-inserts each selected element, in order, as the first child of its parent)
+    <p>
+      <button onclick="lower()">Lower Elements</button>
+    </p>
+    <svg id="lowerSVG" class="border" viewbox="0 0 300 60">
+      <circle r="20" cx="30" cy="30" fill="lightblue" />
+      <circle id="pink" r="20" cx="90" cy="30" fill="pink" />
+      <circle id="violet" r="20" cx="150" cy="30" fill="violet" />
+      <circle r="20" cx="210" cy="30" fill="lightblue" />
+    </svg>
+  </div>
+
+  <div class="container">
+    <h2>Create Elements</h2> (happens on page load)
+    <svg id="createSVG" class="border" viewbox="0 0 300 60"></svg>
+  </div>
+  <br><br>
+</body>
+</html>
