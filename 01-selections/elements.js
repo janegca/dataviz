@@ -101,3 +101,20 @@ function lower() {
     .selectAll("circle")
     .attr("cx", (d, i) => 30 + (i * 60)); 
 }
+
+// Using call() to add elements on multiple selections
+function addElements(selection, n) {
+  let nodeList = selection.nodes();
+  for (let i = 0; i < nodeList.length; i++) {
+    for (let j = 0; j < n; j++) {
+      let newElm = d3.create("div").node();
+      newElm.className = "box aqua-box small";
+      nodeList[i].parentNode.insertBefore(newElm, nodeList[i]);
+    }
+  }
+}
+
+function addElementsWithCall() {
+    d3.selectAll("#callBoxes > div")
+      .call(addElements, 2);
+}
