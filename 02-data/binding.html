@@ -4,10 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/base.css">
   <script src="../d3.v7.js" defer></script>
+  <script src="binding.js" defer></script>
   <title>Binding Data</title>
 </head>
 <body>
-  
+  <div class="container">
+    <h1>Binding Data</h1> 
+    <p>
+      <button onclick="createBarGraph1()">Bind Data</button>
+      (Visual elements exist in DOM)</p>
+    <svg id="bargraph1" class="border" viewBox="0 0 400 90">
+            <rect x="0" y="0" height="10" width="50" fill="lightblue" />
+            <rect x="0" y="20" height="10" width="50" fill="lightblue" />
+            <rect x="0" y="40" height="10" width="50" fill="lightblue" />
+            <rect x="0" y="60" height="10" width="50" fill="lightblue" />
+            <rect x="0" y="80" height="10" width="50" fill="lightblue" />
+    </svg>
+    <br><br>
+    <p>
+      <button onclick="createBarGraph2()">Bind Data</button>
+      (Visual items don't exist in DOM)
+    </p>
+    <svg id="bargraph2" class="border" viewBox="0 0 400 10"></svg>
+    <br><br>
+    <p>
+      <button onclick="createBarGraph3()">Bind Data</button>
+      (Update requires more visual elements.)
+    </p>
+    <svg id="bargraph3" class="border" viewBox="0 0 400 50">
+      <rect x="0" y="0" height="10" width="50" fill="aquamarine" />
+      <rect x="0" y="20" height="10" width="50" fill="aquamarine" />
+      <rect x="0" y="40" height="10" width="50" fill="aquamarine" />
+    </svg>
+    <br><br>
+    <p>
+      <button onclick="createBarGraph4()">Bind Data</button>
+      (Update requires fewer visual elements.)
+    </p>
+    <svg id="bargraph4" class="border" viewBox="0 0 400 130">
+      <rect x="0" y="0" height="10" width="50" fill="lightblue" />
+      <rect x="0" y="20" height="10" width="50" fill="lightblue" />
+      <rect x="0" y="40" height="10" width="50" fill="lightblue" />
+      <rect x="0" y="60" height="10" width="50" fill="lightblue" />
+      <rect x="0" y="80" height="10" width="50" fill="lightblue" />
+      <rect x="0" y="100" height="10" width="50" fill="lightblue" />
+      <rect x="0" y="120" height="10" width="50" fill="lightblue" />
+    </svg>
+    <br><br>
+    <p>
+      <button onclick="createBarGraph5()">Bind Data</button>
+      (Using the convenience method .join)
+    </p>
+    <svg id="bargraph5" class="border" viewBox="0 0 400 10"></svg>
+    <br><br>
+  </div>
 </body>
 </html>
