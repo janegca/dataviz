@@ -42,7 +42,7 @@ var classedExampleButtonHandler = addClass;
 
 // Reverse Text
 function reverseText() {
-  let str = d3.select("#textContainer .textBox").text();
+  let str = d3.select("#textContainer .text-box").text();
   str = str.split("").reverse().join("");
-  d3.select("#textContainer .textBox").text(str);
+  d3.select("#textContainer .text-box").text(str);
 }
