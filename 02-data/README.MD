@@ -15,3 +15,4 @@
   * `selection.enter()` - get the temporary elements for the data not bound to elements
   * `selection.merge(selection)` - merge this selection with another selection
   * `selection.exit()` - get the elements that are missing data
+* `selection.datum([value])` - Gets or sets the bound data for each selected element. Unlike `selection.data`, this method does not compute a join and does not affect indexes or the enter and exit selections.

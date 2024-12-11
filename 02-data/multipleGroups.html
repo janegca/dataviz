@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/base.css">
+  <title>Multiple Groups</title>
+  <script src="../d3.v7.js" defer></script>
+  <script src="multiples.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Multiple Groups</h1>
+    <svg id="dataSVG" class="border" viewBox="0 0 400 60"></svg>
+  </div>
+  <div class="container">
+    <h2>Binding Data Objects</h2>
+    <svg id="bargraph1" class="border" viewBox="0 0 400 100" ></svg>
+  </div>
+  <h1 class="container">Using Key Functions</h1>
+  <div class="container">
+    <h2>Join() without a key</h2>
+    <svg id="bargraph2" class="border" viewBox="0 0 400 100"></svg>
+
+    <button onclick="prependData()">Prepend</button>
+    <button onclick="insertData()">Insert</button>
+    <button onclick="appendData()">Append</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+  <div class="container">
+    <h2>Join with a key</h2>
+    <svg id="bargraph3" class="border" viewBox="0 0 400 100"></svg>
+
+    <button onclick="prependData2()">Prepend</button>
+    <button onclick="insertData2()">Insert</button>
+    <button onclick="appendData2()">Append</button>
+    <button onclick="reset2()">Reset</button>
+  </div>
+  <br><br>
+</body>
+</html>
