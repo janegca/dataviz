@@ -16,3 +16,6 @@
   * `selection.merge(selection)` - merge this selection with another selection
   * `selection.exit()` - get the elements that are missing data
 * `selection.datum([value])` - Gets or sets the bound data for each selected element. Unlike `selection.data`, this method does not compute a join and does not affect indexes or the enter and exit selections.
+* `selection.sort(compare)` - reposition in the DOM the selected elements based on a comparator function. D3 has two comparators: `d3.ascending` and `d3.descending`. You can build custom ones.
+* `selection.order()` - reposition in the DOM the selected elements based on the order of the elements in the selection.
+

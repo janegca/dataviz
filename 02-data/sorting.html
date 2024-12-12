@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/base.css">
+  <title>Reordering Elements</title>
+  <script src="../d3.v7.js" defer></script>
+  <script src="sorting.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Reording Data</h1>
+    <h2>Sorting Circles</h2>
+    <button onclick="sortByRadius()">Sort by Radius</button>
+    <svg id="sortSVG" class="border" viewBox="0 0 400 60">
+      <circle r="25" cx="30" cy="30" fill="lightblue" />
+      <circle r="5" cx="80" cy="30" fill="lightblue" />
+      <circle r="10" cx="130" cy="30" fill="lightblue" />
+      <circle r="20" cx="180" cy="30" fill="lightblue" />
+      <circle r="15" cx="230" cy="30" fill="lightblue" />
+    </svg>
+    <h2>Sort Bar Graph</h2>
+    <button onclick="sortData()">Sort by Population</button>
+    <svg id="bargraph" class="border" viewBox="0 0 400 100"></svg>
+
+    <h2>Sorting Letters</h2>
+    <button onclick="sort()">Sort</button>
+    <div id="order" class="border text-box"></div>
+
+    <h2>Swap Middle Circles</h2>
+    <button onclick="swap()">Swap</button>
+    <svg id="orderSVG" class="border" viewBox="0 0 300 60">>
+      <circle r="25" cx="30" cy="30" fill="lightblue" />
+      <circle r="25" cx="90" cy="30" fill="pink" />
+      <circle r="25" cx="150" cy="30" fill="violet" />
+      <circle r="25" cx="210" cy="30" fill="lightblue" />
+    </svg>
+
+    <h2>Swap Arbitrary Elements</h2>
+    <p>'Swap 1' fails to sway the boxes in place. 'Swap 2' works correctly, swapping the boxes in situ.
+    </p>
+    <div>
+      <button onclick="swap2()">Swap 1</button>
+      <button onclick="swap3()">Swap 2</button>
+      <button onclick="reset()">Reset</button>
+      <div class="border" id="swap2" style="display: inline-flex;">
+        <div class="box blue-box"></div>
+        <div id="box1" class="box violet-box" ></div>
+        <div class="box blue-box"></div>
+        <div id="box2" class="box pink-box"></div>
+        <div class="box blue-box"></div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+</body>
+</html>
