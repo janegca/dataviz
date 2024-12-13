@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/base.css">
+  <title>Axes</title>
+  <script src="../d3.v7.js" defer></script>
+  <script src="axes.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Axes</h1>
+    svg element -- group (path, group of ticks, text)
+    The axis, ticks and values are created as a <i>group</i>. The axis line
+    is given the class name "domain"; the ticks are created within a 
+    separate group, internal to the axis group, with each tick having
+    the class name "tick" and each has a 'line' and 'text' attribute.
+    The 'title' is a seperate text element.
+    <svg id="axisDemo1"  class="border" viewBox="0 0 580 100"></svg>
+
+    <h2>Suggesting # of ticks</h2>
+    Here we asked D3 to display 7 ticks but it decided 6 were best
+    <svg id="axisDemo2"  class="border" viewBox="0 0 580 100"></svg>
+
+    <h2>Display ticks at selected points</h2>
+    Here we asked D3 to display ticks only at points 1,3, and 4
+    <svg id="axisDemo3"  class="border" viewBox="0 0 580 100"></svg>
+
+    <h2>Formatting Ticks</h2>
+    You can size and format ticks. Here an arithmetic progression was set
+    with a range of 1, 2 and a step of 0.25 with 2 floating decimal places.
+    <svg id="axisDemo4"  class="border" viewBox="0 0 580 100"></svg>
+
+    <h2>Changing Tick Line Length</h2>
+    Here, all ticks are lengthened.
+    <svg id="axisDemo5"  class="border" viewBox="0 0 580 100"></svg>
+
+    <h2>Set length for Inner or Outer ticks</h2>
+    Here, only the inner ticks are lengthened.
+    <svg id="axisDemo6"  class="border" viewBox="0 0 580 100"></svg>
+
+    <h2>Change the spacing between the ticks and their values</h2>
+    <svg id="axisDemo7"  class="border" viewBox="0 0 580 100"></svg>
+
+    <h2>Change the tick line style</h2>
+    <svg id="axisDemo8"  class="border" viewBox="0 0 580 100"></svg>
+
+    <br><br>
+  </div>
+</body>
+</html>

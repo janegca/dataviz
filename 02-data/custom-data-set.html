@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/base.css">
+  <title>Custom Dataset</title>
+</head>
+<body>
+  <div class="containter">
+    <h1>Retrieve a custom dataset</h1>
+    <ul id="list">
+      <li data-username="shawnbot">Shawn Allen</li>
+      <li data-username="mbostock">Mike Bostock</li>
+    </ul>
+    Check the console log for result.
+  </div>
+  <script src="../d3.v7.js"></script>
+  <script>
+    var res = d3.selectAll("#list li")
+      .datum(function() { return this.dataset; })
+      .sort(function(a, b) { return d3.ascending(a.username, b.username); });
+
+    console.log(res.data());  // result is a DOMStringMap array
+
+    // gets first array item, and then 'key' is first item in returned pair
+    console.log(Object.keys(res.data()[0])[0]); 
+    // would need to build loop to get all the keys
+    
+  </script>
+</body>
+</html>

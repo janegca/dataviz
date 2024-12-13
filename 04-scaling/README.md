@@ -1,8 +1,8 @@
-# Scaling 
+# Scaling
 
 Scaling functions are used to convert data values in one domain range to values in another domain range.
 
-D3 has 4 scale types: 
+D3 has 4 scale types:
 
 * Continuous - numeric, can use the following functions:
   * `d3.scaleLinear()`
@@ -28,3 +28,19 @@ D3 has 4 scale types:
 * `clamp(true)` - keep values within the given range
 * `invert()` - map values in 'range' to values in the 'domain'
 * `nice()` - rounds the endpoints of domain to nice, round values for display purposes
+
+## Axes
+
+Axes functions take a scale; the axes can then be used to draw tick marks.
+
+* `d3.axisTop(scale)` - draw horizontal axis with ticks on top of line
+* `d3.axisBottom(scale)` - draw horizontal axis with ticks on bottom of line
+* `d3.axisLeft(scale)` - draw vertical axis with ticks on left of line
+* `d3.axisRight(scale)` - draw vertical axis with ticks on right of line
+
+Methods available for axes:
+
+* `d3.range([start,]stop[,step])` - define a range with an arithmetic progression
+* axis`.tickValues([])` - only display ticks at given points
+* axis`.tickFormat(format)` - standard numeric formatters available
+* `tickSize(), tickPadding()` and `tickOffset` methods
