@@ -44,3 +44,8 @@ Methods available for axes:
 * axis`.tickValues([])` - only display ticks at given points
 * axis`.tickFormat(format)` - standard numeric formatters available
 * `tickSize(), tickPadding()` and `tickOffset` methods
+
+Methods available for dates:
+* [D3 Time API](https://d3js.org/api#d3-time)
+* `d3.timeParse(specifier)` - convert strings to date objects (available [Time Formats](https://d3js.org/d3-time-format#locale_format))
+* `d3.extend(dates)` - get min/max elements
