@@ -12,7 +12,7 @@ D3 has 4 scale types:
   * `d3.scaleTime()`
   * `d3.scaleUtc()`
 * Sequential - numeric, create a continuous range using a given 'interpolator'
-  * `d3.scaleSequential(interpolator)`
+  * `d3.scaleSequential(interpolator)` [Interpolate Documention](https://d3js.org/d3-interpolate)
 * Quantized - numeric, continuous within discrete range (partitioned)
   * `d3.scaleQuantize()`
   * `d3.scaleQuantile()`

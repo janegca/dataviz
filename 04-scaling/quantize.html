@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/base.css">
+  <title>Quantize Scales</title>
+  <script src="../d3.v7.js" defer></script>
+  <script src="quantize.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Quantize Scale</h1>
+    Divides segments into equal sections based on range size
+    <svg id="demo1" class="border" viewBox="0 0 580 100"></svg>
+    <br><br>
+    <h2>Quantile Scale</h2>
+    An equal number of values from the domain (# in domain/# in range)  
+    are assigned to the sections
+    <svg id="demo2" class="border" viewBox="0 0 580 100"></svg>
+    <br><br>
+    <h2>Threshold Scale</h2>
+    Domain sets fixed segment boundaries for range
+    <svg id="demo3" class="border" viewBox="0 0 580 100"></svg>
+
+    <br><br>
+  </div>
+</body>
+</html>
