@@ -46,6 +46,9 @@ Methods available for axes:
 * `tickSize(), tickPadding()` and `tickOffset` methods
 
 Methods available for dates:
+
 * [D3 Time API](https://d3js.org/api#d3-time)
 * `d3.timeParse(specifier)` - convert strings to date objects (available [Time Formats](https://d3js.org/d3-time-format#locale_format))
 * `d3.extend(dates)` - get min/max elements
+
+There are a number of methods available for scales, see the [d3-scale](https://d3js.org/d3-scale) documentation.
