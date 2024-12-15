@@ -10,3 +10,4 @@ Order of precedence is: inline :: external :: attr. Emma Saunders prefers extern
 
 [Using D3](https://using-d3js.com/index.html) - online text
 [Essential Training for Data Scientists](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists) by Emma Saunders
+[Color Schemes](https://d3js.org/d3-scale-chromatic)
