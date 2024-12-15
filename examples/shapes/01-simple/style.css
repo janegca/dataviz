@@ -1,0 +1,11 @@
+html, body {
+  margin: 25px;
+  height: 100%;
+}
+
+line{
+  /* inline style takes precedence but this will take
+     precedence over 'attr' property
+  */
+  stroke: red;
+}
