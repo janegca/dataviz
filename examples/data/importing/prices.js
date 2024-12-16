@@ -53,4 +53,3 @@ d3.csv("prices.csv", (d) => { // accessor
     .call(xAxis);
   chartGroup.append("g").attr("class", "y axis").call(yAxis);
 })
-
