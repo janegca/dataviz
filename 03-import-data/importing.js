@@ -42,6 +42,23 @@ d3.html("data/sample.html")
     drawText("#htmlDemo", data);
   });
 
+// Import an XML File
+d3.xml("data/sample.xml")
+.then(function(data) {
+    // data is an XML document, parse document
+    data = [].map.call(data.querySelectorAll("item"), function(item) {
+
+        return {
+            letter: item.querySelector("letter").textContent,
+            number: item.querySelector("number").textContent,
+            color: item.querySelector("color").textContent
+        };
+    });
+
+    drawText("#xmlDemo", data);
+
+ });
+
 // Import a text file
 d3.text("data/sample.txt")
   .then(function(data) {
@@ -74,3 +91,4 @@ d3.image("data/sample.png")
       let ctx = canvas.getContext('2d');
       ctx.drawImage(data, 0,0);
   });
+
