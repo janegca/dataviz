@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Reference:
+  https://observablehq.com/collection/@d3/d3-delaunay
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Voronoi</title>
+		<link rel="stylesheet" type="text/css" href="style.css" >
+		<script type="text/javascript" src="../../../d3.v7.js"></script>
+    <style>
+      g.polygons path{
+        fill: white;
+        stroke: lightsteelblue;
+      }
+
+      /* g.polygons path:hover{
+        fill: yellow;
+      } */
+
+      g.fuel circle{
+        fill: steelblue;
+      }
+    </style>
+	</head>
+	<body>
+		<h1>Voronoi Tessellation</h1>
+    <script type="text/javascript">
+
+      // tooltip
+      const tooltip = d3.select("body")
+        .append("div")
+        .style("opacity", "0")
+        .style("position", "absolute");
+
+      // automatically resize window as it changes size
+      d3.select(window).on("resize", callFunction);
+      callFunction();
+     
+      function callFunction(){
+
+        let svgtest = d3.select("body").select("svg");
+        if(!svgtest.empty()){
+          svgtest.remove();
+        }
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const vertices = d3.range(100)
+          .map((d) => [Math.random() * width, Math.random() * height]);
+        //const voronoi = d3.voronoi().size([width,height]);
+
+        const delaunay = d3.Delaunay.from(vertices);
+        const voronoi = delaunay.voronoi([0.5, 0.5, width - 0.5, height - 0.5]);
+
+        const svg = d3.select("body")
+          .append("svg")
+          .attr("width", "100%")
+          .attr("height", "100%");
+
+        const chartGroup = svg.append("g");
+
+        // not working
+        // chartGroup.call(d3.zoom(event).on("zoom",function(){
+        //   console.log(event); // gets wheel event
+        //   chartGroup.attr("transform",event.transform);
+        // }));
+
+        // remember everything is drawn in the order it is given
+        // no z-order options with svg
+        chartGroup.append("g")
+          .attr("class", "polygons")
+          .selectAll("path")
+          .data(vertices.map((d,i) => voronoi.renderCell(i)))
+          .join("path")
+          .attr("d", (d) => d)
+          .on("mousemove", function(event, d){
+            // console.log(d.split(","));
+            tooltip
+              .style("opacity", "1")
+              .style("left", event.pageX+"px")
+              //.style("left", d[0][0]+"px")
+              .style("top", event.pageY+"px");
+              //.style("top", d[0][1]+"px");
+              
+            // # of sides in the polygon
+            tooltip.html("Number of sides: " + (d.split(",").length - 1))
+          });
+     //     .on("mouseout", function(){this.style.fill = "white";});      
+
+        chartGroup.append("g")
+          .attr("class","fuel")
+          .selectAll("circle")
+          .data(vertices)
+          .join("circle")
+          .attr("cx", (d) => d[0])
+          .attr("cy", (d) => d[1]) 
+          .attr("r", "2.5");
+      }
+
+      // select the 31st polygon
+      d3.select("g.polygons")
+        .select("path:nth-child(30)")
+        .transition().duration(1000).delay(100)  // 1 second with 1/10th sec delay
+        .style("fill","blue");
+      
+
+      // this always shows tooltip in top, left
+      // need to modify tooltip code to tweak out
+      // the x,y coords from the first two path
+      // entries
+      d3.select("g.polygons")
+        .select("path:nth-child(30)")
+        .dispatch("mousemove");
+    </script>
+  </body>
+
+</html>
