@@ -51,10 +51,11 @@ secondGroups.append("rect")
 	.attr("height",50)
 	.attr("class","secondLevelRect");
 
-// Add the circles
+// Add the circles and filter 
 secondGroups.selectAll("circle")
 	.data( (d) => d)
-	.join("circle")
+  .join("circle")
+  .filter((d) => d>10)  // filter is on the selection, not 'data'
 		.attr("cx", (d,i) => { console.log(d);return ((i*21)+10); })
 		.attr("cy","25")
 		.attr("r","10")
