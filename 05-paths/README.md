@@ -1,3 +1,3 @@
 # Path Command
 
-![alt text](image.png)
+![alt text](path-methods.png)
